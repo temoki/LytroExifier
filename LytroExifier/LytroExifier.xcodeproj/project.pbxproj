@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		142665081D1681B300AB00F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142665071D1681B300AB00F1 /* AppDelegate.swift */; };
+		1426650A1D1681B300AB00F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142665091D1681B300AB00F1 /* ViewController.swift */; };
+		1426650C1D1681B300AB00F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1426650B1D1681B300AB00F1 /* Assets.xcassets */; };
+		1426650F1D1681B300AB00F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1426650D1D1681B300AB00F1 /* Main.storyboard */; };
+		1481C4421D1ACD8A0016680F /* LytroMetaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481C4411D1ACD8A0016680F /* LytroMetaItem.swift */; };
+		1481C4441D1AD0D20016680F /* LytroExportedImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481C4431D1AD0D20016680F /* LytroExportedImageFile.swift */; };
+		E8B6AB0AA517F8D35987680A /* Pods_LytroExifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A906EFC4FED919EE9593036 /* Pods_LytroExifier.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A906EFC4FED919EE9593036 /* Pods_LytroExifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LytroExifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE82296E303C2D8D0E1D695 /* Pods-LytroExifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LytroExifier.release.xcconfig"; path = "Pods/Target Support Files/Pods-LytroExifier/Pods-LytroExifier.release.xcconfig"; sourceTree = "<group>"; };
+		142665041D1681B300AB00F1 /* LytroExifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LytroExifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		142665071D1681B300AB00F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		142665091D1681B300AB00F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1426650B1D1681B300AB00F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1426650E1D1681B300AB00F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		142665101D1681B300AB00F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1481C4411D1ACD8A0016680F /* LytroMetaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LytroMetaItem.swift; sourceTree = "<group>"; };
+		1481C4431D1AD0D20016680F /* LytroExportedImageFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LytroExportedImageFile.swift; sourceTree = "<group>"; };
+		BAF741E203617DBD9C8364BB /* Pods-LytroExifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LytroExifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LytroExifier/Pods-LytroExifier.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		142665011D1681B300AB00F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8B6AB0AA517F8D35987680A /* Pods_LytroExifier.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		142664FB1D1681B300AB00F1 = {
+			isa = PBXGroup;
+			children = (
+				142665061D1681B300AB00F1 /* LytroExifier */,
+				142665051D1681B300AB00F1 /* Products */,
+				679E4003FA351E0FB31FEF6D /* Pods */,
+				19991C99FED096E676058393 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		142665051D1681B300AB00F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				142665041D1681B300AB00F1 /* LytroExifier.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		142665061D1681B300AB00F1 /* LytroExifier */ = {
+			isa = PBXGroup;
+			children = (
+				142665071D1681B300AB00F1 /* AppDelegate.swift */,
+				142665091D1681B300AB00F1 /* ViewController.swift */,
+				1481C4411D1ACD8A0016680F /* LytroMetaItem.swift */,
+				1481C4431D1AD0D20016680F /* LytroExportedImageFile.swift */,
+				1426650B1D1681B300AB00F1 /* Assets.xcassets */,
+				1426650D1D1681B300AB00F1 /* Main.storyboard */,
+				142665101D1681B300AB00F1 /* Info.plist */,
+			);
+			path = LytroExifier;
+			sourceTree = "<group>";
+		};
+		19991C99FED096E676058393 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A906EFC4FED919EE9593036 /* Pods_LytroExifier.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		679E4003FA351E0FB31FEF6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAF741E203617DBD9C8364BB /* Pods-LytroExifier.debug.xcconfig */,
+				0DE82296E303C2D8D0E1D695 /* Pods-LytroExifier.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		142665031D1681B300AB00F1 /* LytroExifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 142665131D1681B300AB00F1 /* Build configuration list for PBXNativeTarget "LytroExifier" */;
+			buildPhases = (
+				89C122A62CD6A996D3F8BEAB /* [CP] Check Pods Manifest.lock */,
+				142665001D1681B300AB00F1 /* Sources */,
+				142665011D1681B300AB00F1 /* Frameworks */,
+				142665021D1681B300AB00F1 /* Resources */,
+				F6DFA998A8E4B351C5D65DE8 /* [CP] Embed Pods Frameworks */,
+				9794198D63FEB6625C0DC3FE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LytroExifier;
+			productName = LytroExifier;
+			productReference = 142665041D1681B300AB00F1 /* LytroExifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		142664FC1D1681B300AB00F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = temoki.com;
+				TargetAttributes = {
+					142665031D1681B300AB00F1 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 142664FF1D1681B300AB00F1 /* Build configuration list for PBXProject "LytroExifier" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 142664FB1D1681B300AB00F1;
+			productRefGroup = 142665051D1681B300AB00F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				142665031D1681B300AB00F1 /* LytroExifier */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		142665021D1681B300AB00F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1426650C1D1681B300AB00F1 /* Assets.xcassets in Resources */,
+				1426650F1D1681B300AB00F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89C122A62CD6A996D3F8BEAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9794198D63FEB6625C0DC3FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LytroExifier/Pods-LytroExifier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6DFA998A8E4B351C5D65DE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LytroExifier/Pods-LytroExifier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		142665001D1681B300AB00F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1481C4421D1ACD8A0016680F /* LytroMetaItem.swift in Sources */,
+				1426650A1D1681B300AB00F1 /* ViewController.swift in Sources */,
+				142665081D1681B300AB00F1 /* AppDelegate.swift in Sources */,
+				1481C4441D1AD0D20016680F /* LytroExportedImageFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1426650D1D1681B300AB00F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1426650E1D1681B300AB00F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		142665111D1681B300AB00F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		142665121D1681B300AB00F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		142665141D1681B300AB00F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAF741E203617DBD9C8364BB /* Pods-LytroExifier.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LytroExifier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.temoki.LytroExifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		142665151D1681B300AB00F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DE82296E303C2D8D0E1D695 /* Pods-LytroExifier.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LytroExifier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.temoki.LytroExifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		142664FF1D1681B300AB00F1 /* Build configuration list for PBXProject "LytroExifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				142665111D1681B300AB00F1 /* Debug */,
+				142665121D1681B300AB00F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		142665131D1681B300AB00F1 /* Build configuration list for PBXNativeTarget "LytroExifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				142665141D1681B300AB00F1 /* Debug */,
+				142665151D1681B300AB00F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 142664FC1D1681B300AB00F1 /* Project object */;
+}
