@@ -30,7 +30,7 @@ class LytroExportedImageFile {
     
     var nameWithoutExt: String {
         get {
-            return (self.path as NSString).stringByDeletingPathExtension
+            return (self.nameWithExt as NSString).stringByDeletingPathExtension
         }
     }
     

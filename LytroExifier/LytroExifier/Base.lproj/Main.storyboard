@@ -761,6 +761,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="goButtonAction:" target="XfG-lQ-9wD" id="btb-a2-I7G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

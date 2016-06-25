@@ -127,27 +127,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 let item = LytroMetaItem()
                 item[.Name] = dbRow[0] as? String
                 item[.CaptureDate] = dbRow[1] as? String
-                item[.ShutterSpeed] = dbRow[3] as? Double
-                item[.FNumber] = dbRow[5] as? Double
-                item[.Exposure] = dbRow[6] as? Double
-                item[.FocalLength] = dbRow[7] as? Double
-                
-                if let iso = dbRow[4] as? Int64 {
-                    item[.ISO] = Int(iso)
-                }
-                
-                if let cameraModel = dbRow[2] as? String {
-                    let modelName: String
-                    switch cameraModel {
-                    case "1":
-                        modelName = "LYTRO IMMERGE"
-                    case "2":
-                        modelName = "LYTRO ILLUM"
-                    default:
-                        modelName = ""
-                    }
-                    item[.CameraModel] = modelName
-                }
+                item[.CameraModel] = dbRow[2] as? String
+                item[.CameraMode] = (dbRow[3] as? Int64).map { Int($0) }
+                item[.ShutterSpeed] = dbRow[4] as? Double
+                item[.ISO] = (dbRow[5] as? Int64).map { Int($0) }
+                item[.FNumber] = dbRow[6] as? Double
+                item[.Exposure] = dbRow[7] as? Double
+                item[.FocalLength] = dbRow[8] as? Double
 
                 self.metaItems.append(item)
             }
@@ -157,13 +143,19 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             return
         }
         
+        self.metaItems.sortInPlace {
+            let lhs = $0[.Name] as? String ?? ""
+            let rhs = $1[.Name] as? String ?? ""
+            return lhs < rhs
+        }
+        
         self.tableView.reloadData()
     }
 
     @IBAction func exportedDirApplyAction(sender: NSButton) {
         let fileManager = NSFileManager.defaultManager()
         
-        self.metaItems.removeAll()
+        self.imageFiles.removeAll()
         
         let imagesDirPath = self.imagesDirTextField.stringValue
         print(imagesDirPath)
@@ -176,18 +168,73 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             return
         }
         
-        guard let paths = try? fileManager.contentsOfDirectoryAtPath(imagesDirPath) else {
+        guard let files = try? fileManager.contentsOfDirectoryAtPath(imagesDirPath) else {
             return
         }
         
-        for path in paths {
+        for file in files {
+            let path = (imagesDirPath as NSString).stringByAppendingPathComponent(file)
             if let imageFile = LytroExportedImageFile(path: path) {
                 self.imageFiles[imageFile.nameWithoutExt] = imageFile
             }
         }
         
+        
         self.tableView.reloadData()
     }
+    
+    @IBAction func goButtonAction(sender: NSButton) {
+        for item in self.metaItems {
+            guard let name = item[.Name] as? String else {
+                continue
+            }
 
+            guard let imageFile = self.imageFiles[name] else {
+                continue
+            }
+            
+            self.writeExif(to: imageFile, item: item)
+        }
+    }
+
+    func writeExif(to imageFile: LytroExportedImageFile, item: LytroMetaItem) -> Bool {
+        let fileURL = NSURL(fileURLWithPath: imageFile.path)
+        
+        guard let source = CGImageSourceCreateWithURL(fileURL as CFURLRef, nil) else {
+            return false
+        }
+        
+        guard let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as NSDictionary? else {
+            return false
+        }
+        
+        let exifDictionary = (properties.objectForKey(kCGImagePropertyExifDictionary) as? NSMutableDictionary) ?? NSMutableDictionary()
+        
+        exifDictionary.setValue(item.exifValue(.CaptureDate), forKey: kCGImagePropertyExifDateTimeOriginal as String)
+        exifDictionary.setValue(item.exifValue(.CaptureDate), forKey: kCGImagePropertyExifDateTimeDigitized as String)
+        exifDictionary.setValue(item.exifValue(.CameraModel), forKey: kCGImagePropertyExifLensModel as String)
+        exifDictionary.setValue(item.exifValue(.CameraMode), forKey: kCGImagePropertyExifExposureProgram as String)
+        exifDictionary.setValue(item.exifValue(.ShutterSpeed), forKey: kCGImagePropertyExifShutterSpeedValue as String)
+        exifDictionary.setValue(item.exifValue(.ISO), forKey: kCGImagePropertyExifISOSpeed as String)
+        exifDictionary.setValue(item.exifValue(.FNumber), forKey: kCGImagePropertyExifFNumber as String)
+        exifDictionary.setValue(item.exifValue(.Exposure), forKey: kCGImagePropertyExifExposureBiasValue as String)
+        exifDictionary.setValue(item.exifValue(.FocalLength), forKey: kCGImagePropertyExifFocalLength as String)
+        
+        let newProperties = NSMutableDictionary(dictionary: properties)
+        newProperties.setValue(exifDictionary, forKey: kCGImagePropertyExifDictionary as String)
+        
+        guard let sourceType = CGImageSourceGetType(source) else {
+            return false
+        }
+        
+        let imageData = NSMutableData()
+        guard let destination = CGImageDestinationCreateWithData(imageData, sourceType, 1, nil) else {
+            return false
+        }
+        
+        CGImageDestinationAddImageFromSource(destination, source, 0, newProperties)
+        CGImageDestinationFinalize(destination)
+        return imageData.writeToFile(imageFile.path, atomically: true)
+    }
 }
 
