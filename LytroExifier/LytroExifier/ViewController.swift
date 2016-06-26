@@ -21,13 +21,21 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     // MARK:- Properties
     private var metaItems = [LytroMetaItem]()
     private var imageFiles = [String: LytroExportedImageFile]()
+
     private let imageFileIdentifier = "image_file"
-    
+
+    private let udkey_lytro_lib_path = "LytroLibPath"
+    private let udkey_images_dir_path = "ImagesDirPath"
     
     // MARK:- Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup Text Fields
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        self.lytroLibTextField.stringValue = userDefaults.stringForKey(self.udkey_lytro_lib_path) ?? ""
+        self.imagesDirTextField.stringValue = userDefaults.stringForKey(self.udkey_images_dir_path) ?? ""
         
         // Setup Table View
         self.tableView.setDelegate(self)
@@ -91,12 +99,15 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         guard libPath.pathExtension.lowercaseString == "lytrolibrary" else {
             return
         }
+        NSUserDefaults.standardUserDefaults().setObject(libPath, forKey: self.udkey_lytro_lib_path)
         
+
         let dbName = "lytrolibrary.db"
         let srcDbPath = libPath.stringByAppendingPathComponent(dbName)
         guard fileManager.fileExistsAtPath(srcDbPath) else {
             return
         }
+        
         
         let toDbPath = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent(dbName)
         do {
@@ -167,6 +178,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         guard isDirectory.boolValue else {
             return
         }
+        NSUserDefaults.standardUserDefaults().setObject(imagesDirPath, forKey: self.udkey_images_dir_path)
         
         guard let files = try? fileManager.contentsOfDirectoryAtPath(imagesDirPath) else {
             return
