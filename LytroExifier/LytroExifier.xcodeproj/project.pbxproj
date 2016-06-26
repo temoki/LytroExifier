@@ -12,7 +12,7 @@
 		1426650C1D1681B300AB00F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1426650B1D1681B300AB00F1 /* Assets.xcassets */; };
 		1426650F1D1681B300AB00F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1426650D1D1681B300AB00F1 /* Main.storyboard */; };
 		1481C4421D1ACD8A0016680F /* LytroMetaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481C4411D1ACD8A0016680F /* LytroMetaItem.swift */; };
-		1481C4441D1AD0D20016680F /* LytroExportedImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481C4431D1AD0D20016680F /* LytroExportedImageFile.swift */; };
+		1481C4441D1AD0D20016680F /* LytroImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481C4431D1AD0D20016680F /* LytroImageFile.swift */; };
 		E8B6AB0AA517F8D35987680A /* Pods_LytroExifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A906EFC4FED919EE9593036 /* Pods_LytroExifier.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		1426650E1D1681B300AB00F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		142665101D1681B300AB00F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1481C4411D1ACD8A0016680F /* LytroMetaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LytroMetaItem.swift; sourceTree = "<group>"; };
-		1481C4431D1AD0D20016680F /* LytroExportedImageFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LytroExportedImageFile.swift; sourceTree = "<group>"; };
+		1481C4431D1AD0D20016680F /* LytroImageFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LytroImageFile.swift; sourceTree = "<group>"; };
 		BAF741E203617DBD9C8364BB /* Pods-LytroExifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LytroExifier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LytroExifier/Pods-LytroExifier.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +66,7 @@
 				142665071D1681B300AB00F1 /* AppDelegate.swift */,
 				142665091D1681B300AB00F1 /* ViewController.swift */,
 				1481C4411D1ACD8A0016680F /* LytroMetaItem.swift */,
-				1481C4431D1AD0D20016680F /* LytroExportedImageFile.swift */,
+				1481C4431D1AD0D20016680F /* LytroImageFile.swift */,
 				1426650B1D1681B300AB00F1 /* Assets.xcassets */,
 				1426650D1D1681B300AB00F1 /* Main.storyboard */,
 				142665101D1681B300AB00F1 /* Info.plist */,
@@ -215,7 +215,7 @@
 				1481C4421D1ACD8A0016680F /* LytroMetaItem.swift in Sources */,
 				1426650A1D1681B300AB00F1 /* ViewController.swift in Sources */,
 				142665081D1681B300AB00F1 /* AppDelegate.swift in Sources */,
-				1481C4441D1AD0D20016680F /* LytroExportedImageFile.swift in Sources */,
+				1481C4441D1AD0D20016680F /* LytroImageFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

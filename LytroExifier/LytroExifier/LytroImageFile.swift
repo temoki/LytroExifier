@@ -1,5 +1,5 @@
 //
-//  LytroExportedImageFile.swift
+//  LytroImageFile.swift
 //  LytroExifier
 //
 //  Created by temoki on 2016/06/22.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LytroExportedImageFile {
+class LytroImageFile {
     
     let path: String
     

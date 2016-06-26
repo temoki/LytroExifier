@@ -20,7 +20,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
     // MARK:- Properties
     private var metaItems = [LytroMetaItem]()
-    private var imageFiles = [String: LytroExportedImageFile]()
+    private var imageFiles = [String: LytroImageFile]()
 
     private let imageFileIdentifier = "image_file"
 
@@ -186,7 +186,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         for file in files {
             let path = (imagesDirPath as NSString).stringByAppendingPathComponent(file)
-            if let imageFile = LytroExportedImageFile(path: path) {
+            if let imageFile = LytroImageFile(path: path) {
                 self.imageFiles[imageFile.nameWithoutExt] = imageFile
             }
         }
@@ -209,7 +209,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
     }
 
-    func writeExif(to imageFile: LytroExportedImageFile, item: LytroMetaItem) -> Bool {
+    func writeExif(to imageFile: LytroImageFile, item: LytroMetaItem) -> Bool {
         let fileURL = NSURL(fileURLWithPath: imageFile.path)
         
         guard let source = CGImageSourceCreateWithURL(fileURL as CFURLRef, nil) else {
